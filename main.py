@@ -2,10 +2,11 @@ import os
 from aiogram import Bot, Dispatcher
 import asyncio
 from dotenv import load_dotenv
-from . import router
-
+from router import router
+from database import init_db
 
 load_dotenv()
+init_db()
 
 bot = Bot(token=os.getenv('TELEGRAM_BOT_TOKEN'))
 dp = Dispatcher()
